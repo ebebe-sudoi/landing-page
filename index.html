@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PC BOOST | Maksymalna wydajność Twojego komputera</title>
+
+<meta name="description" content="Zwiększ wydajność swojego komputera! Optymalizacja Windows, więcej FPS, mniej lagów i lepsza płynność w grach.">
+
+<meta name="theme-color" content="#080b0a">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #080b0a;
+    --card: #111714;
+    --green: #8cff45;
+    --green2: #b3ff75;
+    --text: #f3f6f2;
+    --muted: #9ca89f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+    width: 100%;
+    padding: 22px 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.nav-btn {
+    background: var(--green);
+    color: #080b0a !important;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 800;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 850px;
+    padding: 160px 0 90px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background:
+      radial-gradient(ellipse at 50% 30%,
+      rgba(140,255,69,.12), transparent 55%);
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid rgba(140,255,69,.4);
+    color: var(--green);
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(34px, 6vw, 66px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: var(--green);
+    text-shadow: 0 0 30px rgba(140,255,69,.3);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 32px;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 17px 28px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: .5px;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--green);
+    color: #080b0a;
+    box-shadow: 0 0 25px rgba(140,255,69,.15);
+}
+
+.btn-primary:hover {
+    background: var(--green2);
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px rgba(140,255,69,.3);
+}
+
+.btn-outline {
+    border: 1px solid rgba(140,255,69,.5);
+    color: var(--green);
+}
+
+.btn-outline:hover {
+    background: rgba(140,255,69,.1);
+    transform: translateY(-4px);
+}
+
+/* TIKTOK */
+
+.video-section {
+    padding: 90px 0;
+    text-align: center;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(25px, 4vw, 38px);
+    margin-bottom: 18px;
+}
+
+.section-desc {
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.8;
+    margin: 0 auto 40px;
+}
+
+.tiktok-wrapper {
+    max-width: 430px;
+    margin: auto;
+    padding: 15px;
+    background: var(--card);
+    border: 1px solid rgba(140,255,69,.2);
+    border-radius: 15px;
+    min-height: 480px;
+}
+
+.tiktok-embed {
+    margin: auto !important;
+}
+
+/* BENEFITS */
+
+.benefits {
+    padding: 90px 0;
+    background: #0c110e;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.benefit {
+    background: var(--card);
+    border: 1px solid #202a23;
+    padding: 35px 25px;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.benefit:hover {
+    border-color: var(--green);
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.benefit h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.benefit p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* CTA */
+
+.cta {
+    padding: 110px 20px;
+    text-align: center;
+    background:
+    radial-gradient(ellipse at center,
+    rgba(140,255,69,.12), transparent 65%);
+}
+
+.cta h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(27px, 4vw, 45px);
+    margin-bottom: 20px;
+}
+
+.cta p {
+    color: var(--muted);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #202a23;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer span {
+    color: var(--green);
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 150px 0 85px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 340px;
+        padding: 17px 15px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits,
+    .video-section {
+        padding: 70px 0;
+    }
+
+    .tiktok-wrapper {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">PC<span>BOOST</span></a>
+
+            <div class="nav-links">
+                <a href="#korzysci">Korzyści</a>
+                <a href="#tiktok">TikTok</a>
+                <a href="#kontakt" class="nav-btn">ZOPTYMALIZUJ PC</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="tag">
+                ⚡ ODKRYJ PEŁNY POTENCJAŁ SWOJEGO PC
+            </div>
+
+            <h1>
+                TWÓJ KOMPUTER<br>
+                MOŻE DZIAŁAĆ <span>SZYBCIEJ.</span>
+            </h1>
+
+            <p>
+                Mniej lagów. Więcej FPS. Maksymalna płynność.
+                Poznaj możliwości optymalizacji komputera
+                i wykorzystaj pełny potencjał swojego sprzętu.
+            </p>
+
+            <div class="buttons">
+                <a href="https://youtu.be/hW1vHGltfz8?si=JofM5lld9fPT094p"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-primary">
+                    🚀 ZOPTYMALIZUJ SWÓJ KOMPUTER
+                </a>
+
+                <a href="#tiktok" class="btn btn-outline">
+                    ZOBACZ NASZE MATERIAŁY ↓
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TIKTOK -->
+
+<section class="video-section" id="tiktok">
+    <div class="container">
+
+        <div class="section-label">ZOBACZ NAS W AKCJI</div>
+
+        <h2 class="section-title">
+            SPRAWDŹ NASZE MATERIAŁY
+        </h2>
+
+        <p class="section-desc">
+            Poznaj wskazówki, triki i sposoby na poprawę
+            wydajności komputera. Odwiedź nasz profil TikTok.
+        </p>
+
+        <div class="tiktok-wrapper">
+
+            <blockquote
+                class="tiktok-embed"
+                cite="https://www.tiktok.com/@ponury.kosiarz"
+                data-unique-id="ponury.kosiarz"
+                data-embed-type="creator"
+                style="max-width:780px; min-width:288px;">
+
+                <section>
+                    <a target="_blank"
+                       rel="noopener noreferrer"
+                       href="https://www.tiktok.com/@ponury.kosiarz">
+                       @ponury.kosiarz
+                    </a>
+                </section>
+
+            </blockquote>
+
+            <script async
+                src="https://www.tiktok.com/embed.js">
+            </script>
+
+        </div>
+
+        <div style="margin-top:30px">
+            <a href="https://www.tiktok.com/@ponury.kosiarz"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-outline">
+                ODWIEDŹ NAS NA TIKTOKU ↗
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- BENEFITS -->
+
+<section class="benefits" id="korzysci">
+    <div class="container">
+
+        <div style="text-align:center">
+            <div class="section-label">DLACZEGO WARTO?</div>
+
+            <h2 class="section-title">
+                WYCIŚNIJ WIĘCEJ ZE SWOJEGO PC
+            </h2>
+
+            <p class="section-desc">
+                Odpowiednia konfiguracja może pomóc
+                poprawić komfort korzystania z komputera.
+            </p>
+        </div>
+
+        <div class="benefit-grid">
+
+            <div class="benefit">
+                <div class="benefit-icon">⚡</div>
+                <h3>Większa wydajność</h3>
+                <p>
+                    Poznaj ustawienia systemowe,
+                    które mogą pomóc ograniczyć
+                    niepotrzebne obciążenie komputera.
+                </p>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🎮</div>
+                <h3>Lepsza płynność w grach</h3>
+                <p>
+                    Dowiedz się, jak skonfigurować
+                    system i ustawienia, aby poprawić
+                    komfort rozgrywki.
+                </p>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon">🔥</div>
+                <h3>Optymalizacja Windows</h3>
+                <p>
+                    Poznaj sposoby na uporządkowanie
+                    systemu i wyłączenie zbędnych
+                    procesów działających w tle.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="cta" id="kontakt">
+    <div class="container">
+
+        <div class="section-label">CZAS NA ZMIANĘ</div>
+
+        <h2>
+            TWÓJ PC MA WIĘKSZY POTENCJAŁ.
+        </h2>
+
+        <p>
+            Nie czekaj. Sprawdź poradnik i zobacz,
+            jak możesz poprawić działanie swojego komputera.
+        </p>
+
+        <a href="https://youtu.be/hW1vHGltfz8?si=JofM5lld9fPT094p"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+            🚀 OGLĄDAJ PORADNIK TERAZ
+        </a>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+        © <span id="year"></span> PC BOOST.
+        Wszystkie prawa zastrzeżone.
+    </div>
+</footer>
+
+<script>
+    // Automatyczny aktualny rok
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
